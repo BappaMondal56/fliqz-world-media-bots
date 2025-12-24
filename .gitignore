@@ -13,7 +13,6 @@ venv/
 # ---------------------------
 # Media / Storage
 # ---------------------------
-storage/
 uploads/
 videos/
 images/

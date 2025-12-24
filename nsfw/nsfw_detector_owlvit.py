@@ -30,7 +30,7 @@ NSFW_LABELS = [
 CLASS_THRESHOLDS = {
     "Porn": 0.50,
     "Nudity": 0.50,
-    "Sexual Activity": 50.45,
+    "Sexual Activity": 0.50,
     "Genitalia": 0.50,
     "Breasts": 0.50,
     "Buttocks": 0.50,

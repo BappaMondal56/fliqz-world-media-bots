@@ -27,33 +27,33 @@ def dynamic_update(payload: dict, animal_detected=False, das_detected=False, min
         if existing:
             update_data = {
                 k: v for k, v in payload.items()
-                if k not in ["tabel_name", "primary_key", "key_value"]
+                if k not in ["table_name", "primary_key", "key_value"]
                 and k in table.c
             }
             if "updated_at" in table.c:
                 update_data["updated_at"] = now
 
             # Add moderation flags to update_data if columns exist
-            if "has_animal" in table.c:
-                update_data["has_animal"] = 1 if animal_detected else 0
+            if "animal_detected" in table.c:
+                update_data["animal_detected"] = 1 if animal_detected else 0
 
-            if "has_drugs_alcohol_smoking" in table.c:
-                update_data["has_drugs_alcohol_smoking"] = 1 if das_detected else 0
+            if "is_das_detected" in table.c:
+                update_data["is_das_detected"] = 1 if das_detected else 0
 
-            if "is_minor_detected" in table.c:
-                update_data["is_minor_detected"] = 1 if minor_detected else 0
+            if "minor_detected" in table.c:
+                update_data["minor_detected"] = 1 if minor_detected else 0
 
-            if "has_personal_details" in table.c:
-                update_data["has_personal_details"] = 1 if personal_info_detected else 0   
+            if "is_personal_details_detected" in table.c:
+                update_data["is_personal_details_detected"] = 1 if personal_info_detected else 0   
 
-            if "is_nsfw" in table.c:
-                update_data["is_nsfw"] = 1 if nsfw_detected else 0
+            if "nsfw_detected" in table.c:
+                update_data["nsfw_detected"] = 1 if nsfw_detected else 0
 
-            if "is_violence" in table.c:
-                update_data["is_violence"] = 1 if violence_detected else 0
+            if "violance_detected" in table.c:
+                update_data["violance_detected"] = 1 if violence_detected else 0
 
-            if "has_weapon" in table.c:
-                update_data["has_weapon"] = 1 if weapon_detected else 0      
+            if "is_weapon_detected" in table.c:
+                update_data["is_weapon_detected"] = 1 if weapon_detected else 0      
     
 
             stmt = (
